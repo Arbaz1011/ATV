@@ -9,12 +9,7 @@ export const metadata = pageMetadata(
 
 export default function ContactPage() {
   return (
-    <div className="pt-24">
-      <div className="section-padding pb-0 text-center">
-        <h1 className="font-display text-4xl font-bold text-white sm:text-5xl">
-          <span className="gold-gradient-text">Contact</span> Us
-        </h1>
-      </div>
+    <div className="pt-20">
       <ContactSection />
     </div>
   );

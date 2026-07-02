@@ -3,25 +3,25 @@ import { BUSINESS, NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#c9a227]/10 bg-[#0a0a0a]">
+    <footer className="relative z-[1] border-t border-[var(--gold)]/10 bg-[var(--surface)]/80 backdrop-blur-md">
       <div className="section-padding mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <p className="font-display text-2xl font-bold">
-              Adventure <span className="gold-gradient-text">Wheels</span>
+              Adventure <span className="accent-gradient-text">Wheels</span>
             </p>
             <p className="mt-2 text-sm text-white/60">{BUSINESS.location}</p>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/50">
               Premium ATV offroad experiences in the heart of Lonavala. Nature,
               thrill, and safety — guided by expert marshals.
             </p>
-            <p className="mt-3 font-display text-sm italic text-[#c9a227]/90">
-              निसर्गातला एक अविस्मरणीय अनुभव
+            <p className="mt-3 text-sm text-white/45">
+              ATV rides · Stay help · Lonavala weekends
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#c9a227]">
+            <h3 className="luxury-label mb-4">
               Explore
             </h3>
             <ul className="space-y-2">
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#c9a227]">
+            <h3 className="luxury-label mb-4">
               Contact
             </h3>
             <ul className="space-y-2 text-sm text-white/60">
@@ -80,7 +80,7 @@ export default function Footer() {
             href={BUSINESS.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-white/50 hover:text-[#c9a227]"
+            className="text-xs text-white/50 hover:text-[var(--gold-light)]"
           >
             @{BUSINESS.instagram}
           </a>

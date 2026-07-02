@@ -1,54 +1,53 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { ABOUT_STATS } from "@/lib/constants";
 import SectionHeading from "./SectionHeading";
 
 export default function AboutSection() {
   return (
     <section id="about" className="section-padding">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative aspect-[4/5] overflow-hidden rounded-3xl"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80"
-              alt="ATV adventure in Lonavala nature"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f2920] via-transparent to-transparent" />
-          </motion.div>
-
+        <div className="grid items-start gap-16 lg:grid-cols-2">
           <div>
             <SectionHeading
               label="Our Story"
-              title="Adventure Wheels at Atvan"
-              marathi="निसर्गातला एक अविस्मरणीय अनुभव"
+              title="Crafted for Adventure"
+              subtitle="Atvan, Lonavala — where premium offroad meets the calm of the Western Ghats."
             />
-            <div className="space-y-4 text-sm leading-relaxed text-white/65 sm:text-base">
+            <div className="space-y-5 text-sm leading-[1.8] text-[var(--muted)] sm:text-base">
               <p>
-                Nestled in Atvan, Lonavala, Adventure Wheels ATV brings you a
-                premium offroad experience where Western Ghats greenery meets
-                raw adrenaline. We are not just rides — we craft cinematic
-                adventures you will remember.
+                Adventure Wheels is Lonavala&apos;s destination for guided ATV
+                experiences — from gentle first rides to intense jungle offroad.
+                Every trail is marshalled, every rider is geared.
               </p>
               <p>
-                Our trails wind through jungle paths and rugged terrain, always
-                guided by expert marshals who prioritize your safety without
-                compromising the thrill. Whether it is your first ATV or your
-                tenth, every journey feels first-class.
-              </p>
-              <p>
-                Nature, thrill, and safe adventure — that is the Adventure Wheels
-                promise. Book your Lonavala ATV experience today.
+                We also arrange{" "}
+                <a href="#stays" className="text-[var(--gold-light)] hover:underline">
+                  stays in Lonavala
+                </a>{" "}
+                so your weekend flows seamlessly from trail to rest.
               </p>
             </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {ABOUT_STATS.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="luxury-card rounded-2xl p-6"
+              >
+                <p className="font-display text-3xl font-semibold accent-gradient-text">
+                  {stat.value}
+                </p>
+                <p className="mt-3 text-sm font-medium text-white">{stat.label}</p>
+                <p className="mt-1 text-xs text-white/40">{stat.sub}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

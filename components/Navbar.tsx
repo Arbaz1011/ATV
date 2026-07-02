@@ -19,18 +19,18 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ${
         scrolled
-          ? "glass-card border-b border-[#c9a227]/10 py-3 shadow-2xl"
+          ? "glass-card border-b border-[var(--gold)]/10 py-3 shadow-2xl"
           : "bg-transparent py-5"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex flex-col">
           <span className="font-display text-lg font-bold tracking-tight text-white sm:text-xl">
-            Adventure <span className="gold-gradient-text">Wheels</span>
+            Adventure <span className="accent-gradient-text">Wheels</span>
           </span>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-[#c9a227]/80">
+          <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--gold)]/70">
             Lonavala ATV
           </span>
         </Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-white/70 transition-colors hover:text-[#c9a227]"
+                className="text-sm font-medium text-white/60 transition-colors hover:text-[var(--gold-light)]"
               >
                 {link.label}
               </Link>

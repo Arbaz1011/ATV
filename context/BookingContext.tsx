@@ -22,7 +22,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
   const [preselectedPackage, setPreselectedPackage] = useState("");
 
   const openBooking = useCallback((packageId?: string) => {
-    if (packageId) setPreselectedPackage(packageId);
+    setPreselectedPackage(packageId ?? "");
     setIsOpen(true);
   }, []);
 

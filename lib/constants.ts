@@ -15,10 +15,14 @@ export const BUSINESS = {
   mapsLink: "https://maps.google.com/?q=Atvan+Lonavala+Maharashtra",
 } as const;
 
+/** Optional hero accent — one line only, not full bilingual UI */
+export const HERO_TAGLINE_MR = "अविस्मरणीय ATV adventure अनुभव";
+
 export const PACKAGES = [
   {
     id: "basic",
     name: "Basic ATV Ride",
+    imageKey: "basic" as const,
     subtitle: "Perfect for first-timers",
     duration: "3 km track",
     pricePerson: 500,
@@ -34,6 +38,7 @@ export const PACKAGES = [
   {
     id: "premium",
     name: "Premium Offroad Experience",
+    imageKey: "premium" as const,
     subtitle: "The ultimate jungle adventure",
     duration: "1 hour ride",
     pricePerson: 1500,
@@ -47,51 +52,89 @@ export const PACKAGES = [
   },
 ] as const;
 
+export const ABOUT_STATS = [
+  { value: "7+", label: "Age welcome", sub: "Supervised rides" },
+  { value: "3 km", label: "Beginner track", sub: "Safe & scenic" },
+  { value: "1 hr", label: "Premium ride", sub: "Jungle offroad" },
+  { value: "Stay", label: "We help book", sub: "Lonavala hotels" },
+] as const;
+
 export const SAFETY_POINTS = [
-  { title: "Age 7+", description: "Safe rides for young adventurers with supervision" },
-  { title: "Safety Gear", description: "Helmets and protective equipment provided" },
-  { title: "Expert Marshals", description: "Guided rides with trained marshals on every trail" },
-  { title: "Supervised Trails", description: "Every route is monitored for a secure experience" },
+  {
+    icon: "age" as const,
+    title: "Age 7+",
+    description: "Young adventurers welcome with full parental supervision on every ride",
+  },
+  {
+    icon: "helmet" as const,
+    title: "Safety Gear",
+    description: "Helmets, gloves & protective kit included — no extra hassle",
+  },
+  {
+    icon: "marshal" as const,
+    title: "Expert Marshals",
+    description: "Trained marshals lead every batch — briefing before you hit the trail",
+  },
+  {
+    icon: "trail" as const,
+    title: "Supervised Trails",
+    description: "Marked routes, controlled speed zones & on-ground support throughout",
+  },
+] as const;
+
+export const STAY_REQUEST = {
+  title: "We Help You Stay in Lonavala",
+  description:
+    "Book your ATV ride with us and ask for stay help in the same message. We coordinate homestays, resorts, villas and budget rooms near Atvan — share your dates, group size and budget on WhatsApp.",
+  cta: "Request Stay on WhatsApp",
+} as const;
+
+export const STAY_FEATURES = [
+  "Homestays near Atvan",
+  "Lonavala resorts & villas",
+  "Budget rooms for groups",
+  "Ride + stay in one plan",
 ] as const;
 
 export const COMING_SOON = [
-  { title: "Dirt Bike Track", description: "High-adrenaline dirt bike trails coming soon" },
-  { title: "ATV Night Rides", description: "Moonlit offroad adventures under the stars" },
-  { title: "Camping Experience", description: "Stay overnight in nature at Lonavala" },
-  { title: "Adventure Packages", description: "Curated multi-activity bundles" },
+  {
+    id: "dirtBike",
+    title: "Dirt Bike Track",
+    description: "Dedicated dirt bike circuit with jumps, berms and guided sessions",
+    imageKey: "dirtBike" as const,
+    featured: true,
+  },
+  {
+    id: "buggy",
+    title: "Buggy Experience",
+    description: "Side-by-side buggy rides on rugged Lonavala offroad trails",
+    imageKey: "buggy" as const,
+    featured: true,
+  },
+  {
+    id: "nightRide",
+    title: "ATV Night Rides",
+    description: "Evening sessions on lit trails — register interest on WhatsApp",
+    featured: false,
+  },
+  {
+    id: "packages",
+    title: "Weekend Packages",
+    description: "ATV + stay + meals — full adventure weekends",
+    featured: false,
+  },
 ] as const;
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/experiences", label: "Experiences" },
+  { href: "/#stays", label: "Stays" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const HERO_SLIDES = [
-  {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
-    alt: "ATV offroad adventure in mountains",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1920&q=80",
-    alt: "Offroad vehicle on rugged terrain",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80",
-    alt: "Lonavala hills adventure landscape",
-  },
-] as const;
-
-export const FALLBACK_GALLERY = [
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-  "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-  "https://images.unsplash.com/photo-1511593354326-0851647a72fc?w=800&q=80",
-  "https://images.unsplash.com/photo-1682687220063-4742bd6fd538?w=800&q=80",
-] as const;
+export const FALLBACK_GALLERY: readonly string[] = [];
 
 export const SEO_KEYWORDS = [
   "ATV rides in Lonavala",

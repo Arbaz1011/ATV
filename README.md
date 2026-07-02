@@ -16,14 +16,34 @@ Premium cinematic website for **Adventure Wheels ATV Rides** in Atvan, Lonavala,
 
 ## Quick Start
 
+**Important:** If the project is in OneDrive (`Desktop\atv`), `npm install` often corrupts `node_modules`. Use the fix script first:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/fix-install.ps1
+```
+
+Or develop from a local copy (recommended):
+
+```powershell
+# One-time: install works reliably outside OneDrive
+cd C:\dev\atv
+npm install
+npm run dev
+```
+
+Standard setup:
+
 ```bash
 npm install
-cp .env.example .env.local
-# Add Instagram credentials (optional for local gallery fallback)
+copy .env.example .env.local
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+### `Cannot find module ... next\dist\bin\next`
+
+Your `node_modules` is incomplete (common on OneDrive). Run `scripts/fix-install.ps1` or move the project to `C:\Projects\atv` and run `npm install` again.
 
 ## Environment Variables
 

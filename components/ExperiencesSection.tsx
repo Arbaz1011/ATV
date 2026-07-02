@@ -4,13 +4,13 @@ import ExperienceCard from "./ExperienceCard";
 
 export default function ExperiencesSection() {
   return (
-    <section id="experiences" className="section-padding relative bg-[#0a0a0a]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a3d2e33,_transparent_60%)]" />
+    <section id="experiences" className="section-padding relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,169,98,0.07),_transparent_55%)]" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeading
           label="Experiences"
           title="Choose Your Adventure"
-          subtitle="From beginner-friendly trails to premium jungle offroad — every ride is guided and gear-equipped."
+          subtitle="Beginner-friendly 3 km track or premium jungle offroad — both guided with full safety gear."
         />
         <div className="grid gap-8 md:grid-cols-2">
           {PACKAGES.map((pkg) => (

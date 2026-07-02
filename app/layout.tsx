@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { siteMetadata, localBusinessJsonLd } from "@/lib/seo";
 import { BookingProvider } from "@/context/BookingContext";
@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileCTABar from "@/components/MobileCTABar";
 import BookingModal from "@/components/BookingModal";
+import SiteBackground from "@/components/SiteBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,8 +16,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -40,11 +41,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
       >
         <BookingProvider>
+          <SiteBackground />
           <Navbar />
-          <main className="pb-20 sm:pb-0">{children}</main>
+          <main className="relative z-[1] pb-20 sm:pb-0">{children}</main>
           <Footer />
           <WhatsAppButton />
           <MobileCTABar />

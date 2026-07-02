@@ -6,29 +6,24 @@ type Props = {
   label: string;
   title: string;
   subtitle?: string;
-  marathi?: string;
 };
 
-export default function SectionHeading({ label, title, subtitle, marathi }: Props) {
+export default function SectionHeading({ label, title, subtitle }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6 }}
-      className="mb-12 text-center"
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="mb-14 text-center"
     >
-      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c9a227]">
-        {label}
-      </span>
-      <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+      <span className="luxury-label">{label}</span>
+      <div className="luxury-divider" aria-hidden />
+      <h2 className="font-display mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-[2.75rem]">
         {title}
       </h2>
-      {marathi && (
-        <p className="mt-2 font-display text-base italic text-[#c9a227]/80">{marathi}</p>
-      )}
       {subtitle && (
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-white/55 sm:text-base">
+        <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
           {subtitle}
         </p>
       )}

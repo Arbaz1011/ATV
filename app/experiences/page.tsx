@@ -16,7 +16,11 @@ export default function ExperiencesPage() {
           ATV <span className="gold-gradient-text">Experiences</span>
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-white/60">
-          Lonavala&apos;s premium offroad packages — beginner trails to jungle adventures.
+          Beginner 3 km track or premium jungle ride — plus{" "}
+          <a href="/#stays" className="text-[#c9a227] hover:underline">
+            stay assistance
+          </a>{" "}
+          for your Lonavala trip.
         </p>
       </div>
       <ExperiencesSection />
