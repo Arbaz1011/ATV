@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ExperiencesSection from "@/components/ExperiencesSection";
 import SafetySection from "@/components/SafetySection";
 import { pageMetadata } from "@/lib/seo";
@@ -17,9 +18,9 @@ export default function ExperiencesPage() {
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-white/60">
           Beginner 3 km track or premium jungle ride — plus{" "}
-          <a href="/#stays" className="text-[#c9a227] hover:underline">
+          <Link href="/#stays" className="text-[#c9a227] hover:underline">
             stay assistance
-          </a>{" "}
+          </Link>{" "}
           for your Lonavala trip.
         </p>
       </div>

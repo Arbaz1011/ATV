@@ -9,7 +9,7 @@ type GalleryGridProps = {
 };
 
 export default function GalleryGrid({ images }: GalleryGridProps) {
-  const items =
+  const items: { src: string; alt: string; href?: string }[] =
     images ??
     FALLBACK_GALLERY.map((src, i) => ({
       src,
