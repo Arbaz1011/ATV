@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBooking } from "@/context/BookingContext";
 import { PACKAGES } from "@/lib/constants";
-import { bookingMessage, whatsappUrl } from "@/lib/whatsapp";
+import { bookingMessage, openWhatsAppChat } from "@/lib/whatsapp";
 import type { BookingFormData } from "@/lib/types";
 
 const initialForm: BookingFormData = {
@@ -47,18 +47,17 @@ export default function BookingModal() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setSuccess(true);
 
     const message = bookingMessage(form);
-    const url = whatsappUrl(message);
+    openWhatsAppChat(message);
 
+    setSuccess(true);
     setTimeout(() => {
-      window.open(url, "_blank");
       closeBooking();
       setForm(initialForm);
       setSuccess(false);
       setSubmitting(false);
-    }, 1600);
+    }, 1200);
   };
 
   return (
